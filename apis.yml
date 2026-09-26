@@ -1,23 +1,64 @@
 aid: asiasea
+
 name: Asiasea
-description: 'Asiasea is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Asiasea provides comprehensive seafood catering solutions, offering a wide range of frozen and fresh marine products for restaurants,
+  hotels, and catering services. Their platform showcases product catalogs, quality traceability, logistics services, and corporate culture, positioning
+  them as a leading seafood supplier in the Chinese market.
+
 url: https://raw.githubusercontent.com/api-evangelist/asiasea/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Seafood
+- Catering
+- China
+- Supplier
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/asiasea-hosts.yml
+- type: DomainSecurity
+  url: security/asiasea-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/asiasea
+  url: https://www.asiasea.com
+
+apis:
+- name: Asiasea API
+  description: API for Asiasea platform (no machine-readable spec found)
+  humanURL: https://www.asiasea.com
+  aid: asiasea:asiasea-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The website returns a JavaScript shell and no machine‑readable documentation was found.
+  evidence:
+  - url: https://www.asiasea.com
+    status: 200
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local

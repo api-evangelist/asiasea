@@ -1,0 +1,12 @@
+generated: '2026-09-26'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.asiasea.com
+  https: false
+domains:
+- domain: asiasea.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: false
